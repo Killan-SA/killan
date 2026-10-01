@@ -1,0 +1,85 @@
+@import "tailwindcss" source("../");
+
+@theme {
+  --font-display: 'Fredoka', system-ui, sans-serif;
+  --font-sans: 'Nunito', system-ui, sans-serif;
+  --color-lilac: #f4eefb;
+  --color-ink: #2b1b3d;
+  --color-muted: #6d5b82;
+  --color-line: #e0d3ef;
+  --color-pink: #ff8fa8;
+  --color-berry: #d9486c;
+  --color-butter: #ffd66b;
+}
+
+html {
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  background: var(--color-lilac);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.field {
+  display: block;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.7rem 0.85rem;
+  font: inherit;
+  color: var(--color-ink);
+  background: #fff;
+  border: 2px solid var(--color-line);
+  border-radius: 0.75rem;
+}
+.field:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--color-butter);
+  outline-offset: 2px;
+  border-color: var(--color-ink);
+}
+
+.card {
+  background: #fff;
+  border: 2px solid var(--color-ink);
+  border-radius: 1.5rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  box-shadow: 6px 6px 0 var(--color-pink);
+}
+
+.btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.95rem 1.25rem;
+  font: 600 1.15rem var(--font-display);
+  color: #fff;
+  background: var(--color-berry);
+  border: 2px solid var(--color-ink);
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--color-ink);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+.btn:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--color-ink);
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
